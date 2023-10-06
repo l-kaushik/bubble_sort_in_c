@@ -22,10 +22,10 @@ void insertionSort(int A[], int n){
 
 int main()
 {
-    int A[] = {7, 12, 2, 91, 77, 3};
-    int n = 6;
-    printArray(A, 6);
+    int A[] = {7, 12, 2, 91, -77, 3, 13, -99, 2, 43, 64, 759};
+    int n = 12;
+    printArray(A, n);
     insertionSort(A, n);
-    printArray(A, 6);
+    printArray(A, n);
     return 0;
 }
