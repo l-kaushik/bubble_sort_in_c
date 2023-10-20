@@ -20,21 +20,22 @@ void countSort(int a[], int size){
     // creating array of length = max + 1
     max++;
     int *countArr = (int *)calloc(max, sizeof(int));
-    for(int i = 0; i<max; i++){
-        for(int j = 0; j<size; j++){
-            if(a[j] == i){
-                countArr[i]++;
-            }
-        }
+    for(int i = 0; i< size; i++){
+        countArr[a[i]]++;
     }
-    int j = 0;
-    for(int i = 0; i <size;){
-        while(countArr[j] > 0){
-            a[i] = j;
-            i++;
-            countArr[j]--;
+
+    // sorting array
+    int i = 0, j = 0;
+
+    while(i <= max){
+        if(countArr[i] > 0){
+            a[j] = i;
+            countArr[i]--;
+            j++;
         }
-        j++;
+        else{
+            i++;
+        }
     }
 }
 
